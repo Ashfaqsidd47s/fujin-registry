@@ -1,0 +1,31 @@
+{
+  "name": "textarea",
+  "type": "registry:ui",
+  "title": "Textarea",
+  "description": "HeroUI-inspired textarea",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "variants": {
+    "core": {
+      "dependencies": [],
+      "files": [
+        {
+          "path": "packages/ui/textarea/core/textarea.tsx",
+          "target": "components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    "motion": {
+      "dependencies": [],
+      "files": [
+        {
+          "path": "packages/ui/textarea/motion/textarea.tsx",
+          "target": "components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  }
+}

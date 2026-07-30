@@ -1,0 +1,25 @@
+{
+  "name": "switch",
+  "type": "registry:ui",
+  "title": "Switch",
+  "description": "HeroUI-inspired Switch with spring animated thumb motion.",
+  "dependencies": ["class-variance-authority", "@radix-ui/react-switch"],
+  "variants": {
+    "core": {
+      "dependencies": [],
+      "files": [
+        { "path": "packages/ui/switch/core/switch.tsx", "target": "components/ui/switch.tsx", "type": "registry:ui" },
+        { "path": "packages/ui/switch/shared/switch.variants.ts", "target": "components/ui/switch/switch.variants.ts", "type": "registry:ui" },
+        { "path": "packages/ui/switch/shared/switch.types.ts", "target": "components/ui/switch/switch.types.ts", "type": "registry:ui" }
+      ]
+    },
+    "motion": {
+      "dependencies": ["motion"],
+      "files": [
+        { "path": "packages/ui/switch/motion/switch.tsx", "target": "components/ui/switch.tsx", "type": "registry:ui" },
+        { "path": "packages/ui/switch/shared/switch.variants.ts", "target": "components/ui/switch/switch.variants.ts", "type": "registry:ui" },
+        { "path": "packages/ui/switch/shared/switch.types.ts", "target": "components/ui/switch/switch.types.ts", "type": "registry:ui" }
+      ]
+    }
+  }
+}

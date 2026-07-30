@@ -19,6 +19,16 @@
       }
     ],
     "paths": {
+      "@/lib/*": ["./packages/ui/lib/*"],
+      "@/registry/new-york/ui/card": ["./packages/ui/card/core/card"],
+      "@/registry/new-york/ui/button": ["./packages/ui/button/core/button"],
+      "@/registry/new-york/ui/input": ["./packages/ui/input/core/input"],
+      "@/registry/new-york/ui/textarea": ["./packages/ui/textarea/core/textarea"],
+      "@/registry/new-york/ui/badge": ["./packages/ui/badge/core/badge"],
+      "@/registry/new-york/ui/checkbox": ["./packages/ui/checkbox/core/checkbox"],
+      "@/registry/new-york/ui/switch": ["./packages/ui/switch/core/switch"],
+      "@/registry/new-york/ui/label": ["./packages/ui/label/core/label"],
+      "@/registry/new-york/blocks/*": ["./packages/blocks/*"],
       "@/*": ["./*"]
     }
   },

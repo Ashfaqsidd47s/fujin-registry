@@ -1,0 +1,16 @@
+{
+  "name": "example-with-css",
+  "type": "registry:component",
+  "title": "Example With Css",
+  "description": "Example block: example-with-css",
+  "files": [
+    {
+      "path": "packages/blocks/example-with-css/example-card.tsx",
+      "type": "registry:component"
+    },
+    {
+      "path": "packages/blocks/example-with-css/example-card.css",
+      "type": "registry:component"
+    }
+  ]
+}

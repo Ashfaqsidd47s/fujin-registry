@@ -1,0 +1,32 @@
+{
+  "name": "card",
+  "type": "registry:ui",
+  "title": "Card",
+  "description": "HeroUI-inspired card",
+  "dependencies": [
+    "class-variance-authority",
+    "class-variance-authority"
+  ],
+  "variants": {
+    "core": {
+      "dependencies": [],
+      "files": [
+        {
+          "path": "packages/ui/card/core/card.tsx",
+          "target": "components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    "motion": {
+      "dependencies": [],
+      "files": [
+        {
+          "path": "packages/ui/card/motion/card.tsx",
+          "target": "components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  }
+}

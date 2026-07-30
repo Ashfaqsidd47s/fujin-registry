@@ -1,0 +1,14 @@
+{
+  "name": "fujin-variants",
+  "type": "registry:lib",
+  "title": "Fujin Surface Variants",
+  "description": "Recipe layer for surfaces: intensity/interactive presets via cva, plus a typed escape hatch (fujinSurfaceStyle) to override any individual token per instance.",
+  "dependencies": ["class-variance-authority"],
+  "files": [
+    {
+      "path": "packages/ui/lib/fujin-variants.ts",
+      "target": "lib/fujin-variants.ts",
+      "type": "registry:lib"
+    }
+  ]
+}

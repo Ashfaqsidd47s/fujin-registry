@@ -1,0 +1,62 @@
+{
+  "name": "fujin-glass",
+  "type": "registry:style",
+  "title": "Fujin — Glossy Glass",
+  "description": "Base style that gives every fujin component a glassmorphism look, plus a minimal gradient background utility.",
+  "config": {
+    "style": "fujin-glass",
+    "iconLibrary": "lucide",
+    "tailwind": { "baseColor": "neutral" }
+  },
+  "dependencies": [
+    "class-variance-authority",
+    "tw-animate-css",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "cssVars": {
+    "theme": { "radius": "1.25rem" },
+    "light": {
+      "fujin-surface-tint": "255 255 255",
+      "fujin-surface-opacity": "0.55",
+      "fujin-surface-blur": "20px",
+      "fujin-surface-saturation": "180%",
+      "fujin-surface-border-tint": "255 255 255",
+      "fujin-surface-border-opacity": "0.35",
+      "fujin-surface-highlight-opacity": "0.4",
+      "fujin-surface-shadow-color": "0 0 0",
+      "fujin-surface-shadow-opacity": "0.14",
+      "fujin-surface-shadow-blur": "32px",
+      "fujin-surface-shadow-y": "8px",
+      "fujin-radius": "1.25rem",
+      "fujin-bg-gradient-angle": "135deg",
+      "fujin-bg-gradient-from": "oklch(0.97 0.02 280)",
+      "fujin-bg-gradient-via": "oklch(0.95 0.03 320)",
+      "fujin-bg-gradient-to": "oklch(0.96 0.02 200)"
+    },
+    "dark": {
+      "fujin-surface-tint": "20 20 30",
+      "fujin-surface-opacity": "0.45",
+      "fujin-surface-border-opacity": "0.12",
+      "fujin-surface-highlight-opacity": "0.08",
+      "fujin-surface-shadow-opacity": "0.4",
+      "fujin-bg-gradient-from": "oklch(0.16 0.03 280)",
+      "fujin-bg-gradient-via": "oklch(0.14 0.04 320)",
+      "fujin-bg-gradient-to": "oklch(0.15 0.03 220)"
+    }
+  },
+  "css": {
+    "@layer components": {
+      ".fujin-surface": {
+        "background": "rgb(var(--fujin-surface-tint) / var(--fujin-surface-opacity))",
+        "border": "1px solid rgb(var(--fujin-surface-border-tint) / var(--fujin-surface-border-opacity))",
+        "backdrop-filter": "blur(var(--fujin-surface-blur)) saturate(var(--fujin-surface-saturation))",
+        "box-shadow": "0 var(--fujin-surface-shadow-y) var(--fujin-surface-shadow-blur) rgb(var(--fujin-surface-shadow-color) / var(--fujin-surface-shadow-opacity)), inset 0 1px 0 rgb(var(--fujin-surface-tint) / var(--fujin-surface-highlight-opacity))",
+        "border-radius": "var(--fujin-radius)"
+      },
+      ".fujin-gradient-bg": {
+        "background": "linear-gradient(var(--fujin-bg-gradient-angle, 135deg), var(--fujin-bg-gradient-from), var(--fujin-bg-gradient-via), var(--fujin-bg-gradient-to))"
+      }
+    }
+  }
+}

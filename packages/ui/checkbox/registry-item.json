@@ -1,0 +1,32 @@
+{
+  "name": "checkbox",
+  "type": "registry:ui",
+  "title": "Checkbox",
+  "description": "HeroUI-inspired checkbox",
+  "dependencies": [
+    "class-variance-authority",
+    "@radix-ui/react-checkbox"
+  ],
+  "variants": {
+    "core": {
+      "dependencies": [],
+      "files": [
+        {
+          "path": "packages/ui/checkbox/core/checkbox.tsx",
+          "target": "components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    "motion": {
+      "dependencies": [],
+      "files": [
+        {
+          "path": "packages/ui/checkbox/motion/checkbox.tsx",
+          "target": "components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  }
+}

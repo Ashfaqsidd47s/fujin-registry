@@ -1,0 +1,25 @@
+{
+  "name": "button",
+  "type": "registry:ui",
+  "title": "Button",
+  "description": "HeroUI-inspired button with solid, bordered, flat, light, faded, shadow, and ghost variants.",
+  "dependencies": ["class-variance-authority", "@radix-ui/react-slot"],
+  "variants": {
+    "core": {
+      "dependencies": [],
+      "files": [
+        { "path": "packages/ui/button/core/button.tsx", "target": "components/ui/button.tsx", "type": "registry:ui" },
+        { "path": "packages/ui/button/shared/button.variants.ts", "target": "components/ui/button/button.variants.ts", "type": "registry:ui" },
+        { "path": "packages/ui/button/shared/button.types.ts", "target": "components/ui/button/button.types.ts", "type": "registry:ui" }
+      ]
+    },
+    "motion": {
+      "dependencies": ["motion"],
+      "files": [
+        { "path": "packages/ui/button/motion/button.tsx", "target": "components/ui/button.tsx", "type": "registry:ui" },
+        { "path": "packages/ui/button/shared/button.variants.ts", "target": "components/ui/button/button.variants.ts", "type": "registry:ui" },
+        { "path": "packages/ui/button/shared/button.types.ts", "target": "components/ui/button/button.types.ts", "type": "registry:ui" }
+      ]
+    }
+  }
+}

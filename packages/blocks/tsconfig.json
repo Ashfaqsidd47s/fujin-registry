@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "paths": {
+      "@/lib/*": ["../ui/lib/*"],
+      "@/registry/new-york/ui/card": ["../ui/card/core/card"],
+      "@/registry/new-york/ui/button": ["../ui/button/core/button"],
+      "@/registry/new-york/ui/input": ["../ui/input/core/input"],
+      "@/registry/new-york/ui/textarea": ["../ui/textarea/core/textarea"],
+      "@/registry/new-york/ui/badge": ["../ui/badge/core/badge"],
+      "@/registry/new-york/ui/checkbox": ["../ui/checkbox/core/checkbox"],
+      "@/registry/new-york/ui/switch": ["../ui/switch/core/switch"],
+      "@/registry/new-york/ui/label": ["../ui/label/core/label"],
+      "@/registry/new-york/blocks/*": ["../blocks/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}

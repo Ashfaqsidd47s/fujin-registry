@@ -1,0 +1,30 @@
+# Switch
+
+A toggle slider component built on Radix Switch primitives.
+
+---
+
+## Installation
+
+### Core (CSS Transitions)
+```bash
+npx shadcn@latest add http://localhost:3000/r/switch.json
+```
+
+### Motion (Framer Motion)
+```bash
+npx shadcn@latest add http://localhost:3000/r/switch-motion.json
+```
+
+---
+
+## Props
+
+The Switch component extends the Radix UI Switch primitive root and adds label layout supports:
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `color` | `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | `default` | Branding track color when checked |
+| `size` | `sm` \| `md` \| `lg` | `md` | Dimensions |
+| `label` | `ReactNode` | `undefined` | Switch label text |
+| `description` | `ReactNode` | `undefined` | Supplemental detail description text |

@@ -1,0 +1,32 @@
+{
+  "name": "complex-component",
+  "type": "registry:component",
+  "title": "Complex Component",
+  "description": "Example block: complex-component",
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "packages/blocks/complex-component/page.tsx",
+      "target": "app/pokemon/page.tsx",
+      "type": "registry:page"
+    },
+    {
+      "path": "packages/blocks/complex-component/components/pokemon-card.tsx",
+      "type": "registry:component"
+    },
+    {
+      "path": "packages/blocks/complex-component/components/pokemon-image.tsx",
+      "type": "registry:component"
+    },
+    {
+      "path": "packages/blocks/complex-component/lib/pokemon.ts",
+      "type": "registry:lib"
+    },
+    {
+      "path": "packages/blocks/complex-component/hooks/use-pokemon.ts",
+      "type": "registry:hook"
+    }
+  ]
+}

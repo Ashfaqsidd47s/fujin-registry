@@ -1,0 +1,15 @@
+{
+  "name": "hello-world",
+  "type": "registry:component",
+  "title": "Hello World",
+  "description": "Example block: hello-world",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "packages/blocks/hello-world/hello-world.tsx",
+      "type": "registry:component"
+    }
+  ]
+}

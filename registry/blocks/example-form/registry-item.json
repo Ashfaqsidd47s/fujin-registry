@@ -1,0 +1,22 @@
+{
+  "name": "example-form",
+  "type": "registry:component",
+  "title": "Example Form",
+  "description": "Example block: example-form",
+  "dependencies": [
+    "zod"
+  ],
+  "registryDependencies": [
+    "button",
+    "input",
+    "label",
+    "textarea",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "packages/blocks/example-form/example-form.tsx",
+      "type": "registry:component"
+    }
+  ]
+}

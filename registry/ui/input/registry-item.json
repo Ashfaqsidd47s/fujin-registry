@@ -1,0 +1,31 @@
+{
+  "name": "input",
+  "type": "registry:ui",
+  "title": "Input",
+  "description": "HeroUI-inspired input",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "variants": {
+    "core": {
+      "dependencies": [],
+      "files": [
+        {
+          "path": "packages/ui/input/core/input.tsx",
+          "target": "components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    "motion": {
+      "dependencies": [],
+      "files": [
+        {
+          "path": "packages/ui/input/motion/input.tsx",
+          "target": "components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  }
+}

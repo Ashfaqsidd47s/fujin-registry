@@ -1,0 +1,10 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - "tooling/*"
+
+allowBuilds:
+  "@tailwindcss/oxide": false
+  msw: false
+  sharp: false
+  unrs-resolver: false

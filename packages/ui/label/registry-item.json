@@ -1,0 +1,32 @@
+{
+  "name": "label",
+  "type": "registry:ui",
+  "title": "Label",
+  "description": "HeroUI-inspired label",
+  "dependencies": [
+    "class-variance-authority",
+    "@radix-ui/react-label"
+  ],
+  "variants": {
+    "core": {
+      "dependencies": [],
+      "files": [
+        {
+          "path": "packages/ui/label/core/label.tsx",
+          "target": "components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    "motion": {
+      "dependencies": [],
+      "files": [
+        {
+          "path": "packages/ui/label/motion/label.tsx",
+          "target": "components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+# Introduction
+
+Welcome to **Fujin**, a feature-first React ecosystem.
+
+Every React project starts with the same repetitive work: setting up authentication, complex tables, forms, payment integrations, uploads, and search overlays. Developers spend days rebuilding these.
+
+Fujin solves this by providing **production-ready features**, not just simple unstyled building blocks. It acts as a code generator: you run a CLI command, and the complete source code is placed directly in your workspace. You own 100% of the code.
+
+---
+
+## Key Features
+
+1. **Dual-Track UI Components**: Install lightweight, CSS-only components (`core`) or animated components (`motion`).
+2. **Zero Runtime Lock-In**: Everything added is fully local code in your project. No third-party runtime package dependencies.
+3. **HeroUI Skin, Radix Bones**: Accessibility-first component primitives skinned with a modern glassmorphism aesthetic.
+4. **Compatible with Shadcn/ui**: Fully integrates with your existing `components.json` settings and `shadcn` CLI tooling.
+
+---
+
+## Monorepo Source Layout
+
+To scale effectively, the project is structured as a pnpm monorepo:
+
+* **`apps/web`**: This documentation site and showcase page.
+* **`packages/ui`**: Component packages, each divided into `core`, `motion`, and `shared` logic.
+* **`packages/blocks`**: High-fidelity UI blocks and sections.
+* **`registry`**: Compiled static directory containing the files and JSON registry manifests.

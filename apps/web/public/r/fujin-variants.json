@@ -1,0 +1,17 @@
+{
+  "name": "fujin-variants",
+  "type": "registry:lib",
+  "title": "Fujin Surface Variants",
+  "description": "Recipe layer for surfaces: intensity/interactive presets via cva, plus a typed escape hatch (fujinSurfaceStyle) to override any individual token per instance.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "lib/fujin-variants.ts",
+      "content": "import { cva, type VariantProps } from \"class-variance-authority\";\nimport type { CSSProperties } from \"react\";\n\n/**\n * The full set of CSS custom properties every fujin \"surface\" reads.\n * Any of these can be overridden per-instance via the `vars` prop below —\n * this is the escape hatch that makes the system fully customizable\n * without needing a new prop or variant for every possible tweak.\n */\nexport interface FujinSurfaceVars {\n  tint?: string; // \"255 255 255\" (RGB channel triplet)\n  opacity?: number;\n  blur?: string; // \"20px\"\n  saturation?: string; // \"180%\"\n  borderTint?: string;\n  borderOpacity?: number;\n  highlightOpacity?: number;\n  shadowColor?: string;\n  shadowOpacity?: number;\n  shadowBlur?: string;\n  shadowY?: string;\n  radius?: string;\n}\n\nconst varMap: Record<keyof FujinSurfaceVars, string> = {\n  tint: \"--fujin-surface-tint\",\n  opacity: \"--fujin-surface-opacity\",\n  blur: \"--fujin-surface-blur\",\n  saturation: \"--fujin-surface-saturation\",\n  borderTint: \"--fujin-surface-border-tint\",\n  borderOpacity: \"--fujin-surface-border-opacity\",\n  highlightOpacity: \"--fujin-surface-highlight-opacity\",\n  shadowColor: \"--fujin-surface-shadow-color\",\n  shadowOpacity: \"--fujin-surface-shadow-opacity\",\n  shadowBlur: \"--fujin-surface-shadow-blur\",\n  shadowY: \"--fujin-surface-shadow-y\",\n  radius: \"--fujin-radius\",\n};\n\n/** Converts the friendly `vars` prop into a real inline style object. */\nexport function fujinSurfaceStyle(vars?: FujinSurfaceVars): CSSProperties {\n  if (!vars) return {};\n  const style: Record<string, string> = {};\n  for (const key in vars) {\n    const k = key as keyof FujinSurfaceVars;\n    if (vars[k] !== undefined) {\n      style[varMap[k]] = String(vars[k]);\n    }\n  }\n  return style as CSSProperties;\n}\n\n/**\n * Preset \"intensity\" levels, for the common case where someone just wants\n * a lighter or heavier version of whatever style is active — without\n * having to know or set individual variables. Because these only ever\n * set the same --fujin-surface-* variables, they compose cleanly with\n * ANY current/future data-fujin-style (glass, neubrutal, aurora, ...).\n */\nexport const surfaceVariants = cva(\"fujin-surface\", {\n  variants: {\n    intensity: {\n      subtle: \"[--fujin-surface-opacity:0.35] [--fujin-surface-blur:12px]\",\n      default: \"\",\n      strong: \"[--fujin-surface-opacity:0.75] [--fujin-surface-blur:28px]\",\n    },\n    interactive: {\n      true: \"transition-transform duration-200 hover:-translate-y-0.5\",\n      false: \"\",\n    },\n  },\n  defaultVariants: {\n    intensity: \"default\",\n    interactive: false,\n  },\n});\n\nexport type SurfaceVariantProps = VariantProps<typeof surfaceVariants>;\n",
+      "type": "registry:lib"
+    }
+  ]
+}
