@@ -1,24 +1,50 @@
 # Button
 
-A premium, HeroUI-skinned button built on Radix Slot primitives.
+Displays a button or a component that looks like a button.
 
----
+<ComponentPreview name="button-demo" />
 
 ## Installation
 
-You can install either the lightweight CSS-transition version or the spring-animated motion version:
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <div className="space-y-4">
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Core (CSS Transitions)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/button.json
+        ```
+      </div>
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Motion (Framer Motion)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/button-motion.json
+        ```
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install @radix-ui/react-slot class-variance-authority clsx tailwind-merge lucide-react
+      ```
 
-### Core (CSS Transitions)
-```bash
-npx shadcn@latest add http://localhost:3000/r/button.json
-```
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="button" title="components/ui/button.tsx" />
 
-### Motion (Framer Motion)
-```bash
-npx shadcn@latest add http://localhost:3000/r/button-motion.json
-```
+      <Step>Create the helper variants and types files.</Step>
+      <ComponentSource name="button" title="components/ui/button/button.variants.ts" />
+      <ComponentSource name="button" title="components/ui/button/button.types.ts" />
 
----
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>
 
 ## Props
 

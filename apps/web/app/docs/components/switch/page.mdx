@@ -2,21 +2,49 @@
 
 A toggle slider component built on Radix Switch primitives.
 
----
+<ComponentPreview name="switch-demo" />
 
 ## Installation
 
-### Core (CSS Transitions)
-```bash
-npx shadcn@latest add http://localhost:3000/r/switch.json
-```
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <div className="space-y-4">
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Core (CSS Transitions)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/switch.json
+        ```
+      </div>
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Motion (Framer Motion)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/switch-motion.json
+        ```
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install @radix-ui/react-switch class-variance-authority clsx tailwind-merge
+      ```
 
-### Motion (Framer Motion)
-```bash
-npx shadcn@latest add http://localhost:3000/r/switch-motion.json
-```
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="switch" title="components/ui/switch.tsx" />
 
----
+      <Step>Create the helper variants and types files.</Step>
+      <ComponentSource name="switch" title="components/ui/switch/switch.variants.ts" />
+      <ComponentSource name="switch" title="components/ui/switch/switch.types.ts" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>
 
 ## Props
 

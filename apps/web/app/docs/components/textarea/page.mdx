@@ -1,0 +1,49 @@
+# Textarea
+
+A multi-line text input field for collecting user comments or descriptions.
+
+<ComponentPreview name="textarea-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash
+    npx shadcn@latest add http://localhost:3000/r/textarea.json
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install class-variance-authority clsx tailwind-merge
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="textarea" title="components/ui/textarea.tsx" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>
+
+## Props
+
+The Textarea component extends the standard HTML textarea element and supports:
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `variant` | `flat` \| `bordered` \| `faded` \| `underlined` | `flat` | Visual style variation |
+| `color` | `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | `default` | Branding color theme |
+| `size` | `sm` \| `md` \| `lg` | `md` | Dimensions |
+| `radius` | `none` \| `sm` \| `md` \| `lg` \| `full` | `md` | Border radius |
+| `label` | `ReactNode` | `undefined` | Section header label text |
+| `description` | `ReactNode` | `undefined` | Bottom aligned description text |
+| `errorMessage` | `ReactNode` | `undefined` | Validation error display text |
+| `isInvalid` | `boolean` | `false` | Marks state error styling changes |
+| `minRows` | `number` | `3` | Minimum vertical row span count |
+| `maxRows` | `number` | `8` | Maximum auto-expand height limit |

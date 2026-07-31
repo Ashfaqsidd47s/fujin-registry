@@ -1,45 +1,112 @@
 import type { MDXComponents } from "mdx/types"
 import * as React from "react"
 import { cn } from "@/lib/utils"
+import { ComponentPreview } from "./components/component-preview"
+import { ComponentSource } from "./components/component-source"
+import {
+  Steps,
+  Step,
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+  CodeTabs,
+} from "./components/mdx-components-impl"
+
+const slugify = (text: string) => {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\-]+/g, "")
+    .replace(/\-\-+/g, "-")
+}
+
+const getText = (node: React.ReactNode): string => {
+  if (!node) return ""
+  if (typeof node === "string" || typeof node === "number") return String(node)
+  if (Array.isArray(node)) return node.map(getText).join("")
+  if (React.isValidElement<{ children?: React.ReactNode }>(node)) {
+    return getText(node.props.children)
+  }
+  return ""
+}
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
-    h1: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h1
-        className={cn(
-          "font-heading mt-2 scroll-m-20 text-4xl font-bold tracking-tight text-foreground",
-          className
-        )}
-        {...props}
-      />
-    ),
-    h2: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h2
-        className={cn(
-          "font-heading mt-12 scroll-m-20 border-b border-border/60 pb-2 text-2xl font-semibold tracking-tight text-foreground first:mt-0",
-          className
-        )}
-        {...props}
-      />
-    ),
-    h3: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h3
-        className={cn(
-          "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight text-foreground",
-          className
-        )}
-        {...props}
-      />
-    ),
-    h4: ({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => (
-      <h4
-        className={cn(
-          "font-heading mt-6 scroll-m-20 text-lg font-semibold tracking-tight text-foreground",
-          className
-        )}
-        {...props}
-      />
-    ),
+    ComponentPreview,
+    ComponentSource,
+    Steps,
+    Step,
+    Tabs,
+    TabsList,
+    TabsTrigger,
+    TabsContent,
+    CodeTabs,
+    h1: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = getText(children)
+      const id = text ? slugify(text) : undefined
+      return (
+        <h1
+          id={id}
+          className={cn(
+            "font-heading mt-2 scroll-m-20 text-4xl font-bold tracking-tight text-foreground",
+            className
+          )}
+          {...props}
+        >
+          {children}
+        </h1>
+      )
+    },
+    h2: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = getText(children)
+      const id = text ? slugify(text) : undefined
+      return (
+        <h2
+          id={id}
+          className={cn(
+            "font-heading mt-12 scroll-m-20 border-b border-border/60 pb-2 text-2xl font-semibold tracking-tight text-foreground first:mt-0",
+            className
+          )}
+          {...props}
+        >
+          {children}
+        </h2>
+      )
+    },
+    h3: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = getText(children)
+      const id = text ? slugify(text) : undefined
+      return (
+        <h3
+          id={id}
+          className={cn(
+            "font-heading mt-8 scroll-m-20 text-xl font-semibold tracking-tight text-foreground",
+            className
+          )}
+          {...props}
+        >
+          {children}
+        </h3>
+      )
+    },
+    h4: ({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) => {
+      const text = getText(children)
+      const id = text ? slugify(text) : undefined
+      return (
+        <h4
+          id={id}
+          className={cn(
+            "font-heading mt-6 scroll-m-20 text-lg font-semibold tracking-tight text-foreground",
+            className
+          )}
+          {...props}
+        >
+          {children}
+        </h4>
+      )
+    },
     p: ({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) => (
       <p
         className={cn("leading-7 [&:not(:first-child)]:mt-6 text-foreground/90 text-sm", className)}

@@ -1,0 +1,49 @@
+# Input
+
+A text input field for collecting user input.
+
+<ComponentPreview name="input-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash
+    npx shadcn@latest add http://localhost:3000/r/input.json
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install class-variance-authority clsx tailwind-merge
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="input" title="components/ui/input.tsx" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>
+
+## Props
+
+The Input component extends the standard HTML input tag and supports the following customization parameters:
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `variant` | `flat` \| `bordered` \| `faded` \| `underlined` | `flat` | Outline style variation |
+| `color` | `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | `default` | Color theme |
+| `size` | `sm` \| `md` \| `lg` | `md` | Padding and sizing constraints |
+| `radius` | `none` \| `sm` \| `md` \| `lg` \| `full` | `md` | Corner border radius |
+| `label` | `ReactNode` | `undefined` | Float/top section header text |
+| `description` | `ReactNode` | `undefined` | Helpful bottom caption detail |
+| `errorMessage` | `ReactNode` | `undefined` | Error feedback message display text |
+| `isInvalid` | `boolean` | `false` | Marks field state as invalid/error |
+| `startContent` | `ReactNode` | `undefined` | Left aligned icon/adornment |
+| `endContent` | `ReactNode` | `undefined` | Right aligned icon/adornment |

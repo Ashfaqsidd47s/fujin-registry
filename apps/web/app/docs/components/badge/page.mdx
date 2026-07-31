@@ -1,0 +1,43 @@
+# Badge
+
+A small semantic indicator tag for status, categories, or notifications.
+
+<ComponentPreview name="badge-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash
+    npx shadcn@latest add http://localhost:3000/r/badge.json
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install class-variance-authority clsx tailwind-merge
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="badge" title="components/ui/badge.tsx" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>
+
+## Props
+
+The Badge component accepts standard HTML attributes and the following styling custom props:
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `variant` | `solid` \| `bordered` \| `flat` \| `faded` \| `shadow` | `solid` | Visual style variation |
+| `color` | `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | `default` | Semantic branding color |
+| `radius` | `none` \| `sm` \| `md` \| `lg` \| `full` | `md` | Border radius |
+| `size` | `sm` \| `md` \| `lg` | `md` | Dimensions |

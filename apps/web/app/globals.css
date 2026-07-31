@@ -218,4 +218,14 @@
       var(--fujin-bg-gradient-to)
     );
   }
+
+  /* Steps Timeline CSS Counter */
+  .steps {
+    counter-reset: step;
+  }
+  .steps h3::before {
+    counter-increment: step;
+    content: counter(step);
+  }
 }
+

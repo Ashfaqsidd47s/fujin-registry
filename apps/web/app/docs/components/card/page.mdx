@@ -1,0 +1,49 @@
+# Card
+
+A flexible container wrapper component with glassmorphism surface tokens.
+
+<ComponentPreview name="card-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash
+    npx shadcn@latest add http://localhost:3000/r/card.json
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install class-variance-authority clsx tailwind-merge
+      ```
+
+      <Step>Ensure you have the surface presets utility file `lib/fujin-variants.ts` created.</Step>
+      <ComponentSource name="fujin-variants" title="lib/fujin-variants.ts" />
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="card" title="components/ui/card.tsx" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>
+
+## Props
+
+The Card component supports standard layout elements and the following custom options:
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `variant` | `default` \| `transparent` \| `secondary` \| `tertiary` | `default` | Color intensity level |
+| `shadow` | `none` \| `sm` \| `md` \| `lg` | `md` | Outer drop shadow size |
+| `radius` | `none` \| `sm` \| `md` \| `lg` | `md` | Corner border radius |
+| `isHoverable` | `boolean` | `false` | Enables vertical hover shifting |
+| `isPressable` | `boolean` | `false` | Enables click scaling animations |
+| `intensity` | `subtle` \| `default` \| `strong` | `default` | Glassmorphism layer strength |
+| `vars` | `FujinSurfaceVars` | `undefined` | Key-value inline token overrides |

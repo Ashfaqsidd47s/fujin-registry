@@ -1,0 +1,44 @@
+# Checkbox
+
+A control that allows the user to select multiple options from a set.
+
+<ComponentPreview name="checkbox-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash
+    npx shadcn@latest add http://localhost:3000/r/checkbox.json
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install @radix-ui/react-checkbox class-variance-authority clsx tailwind-merge lucide-react
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="checkbox" title="components/ui/checkbox.tsx" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>
+
+## Props
+
+The Checkbox component extends the Radix UI Checkbox root and adds custom styling variables:
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `color` | `default` \| `primary` \| `secondary` \| `success` \| `warning` \| `danger` | `default` | Branding checked fill color |
+| `size` | `sm` \| `md` \| `lg` | `md` | Dimensions |
+| `label` | `ReactNode` | `undefined` | Right-side label layout text |
+| `description` | `ReactNode` | `undefined` | Small caption helper text |
+| `isInvalid` | `boolean` | `false` | Marks state error styling changes |
