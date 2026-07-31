@@ -1,0 +1,9 @@
+{
+  "name": "spinner",
+  "type": "registry:ui",
+  "title": "Spinner",
+  "description": "Displays a loading indicator.",
+  "files": [
+    { "path": "packages/ui/spinner/core/spinner.tsx", "target": "components/ui/spinner.tsx", "type": "registry:ui" }
+  ]
+}

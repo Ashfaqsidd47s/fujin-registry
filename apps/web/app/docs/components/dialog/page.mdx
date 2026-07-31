@@ -1,0 +1,46 @@
+# Dialog
+
+A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+
+<ComponentPreview name="dialog-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <div className="space-y-4">
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Core (CSS Transitions)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/dialog.json
+        ```
+      </div>
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Motion (Framer Motion)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/dialog-motion.json
+        ```
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install @radix-ui/react-dialog clsx tailwind-merge lucide-react
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="dialog" title="components/ui/dialog.tsx" />
+
+      <Step>Create the helper types file.</Step>
+      <ComponentSource name="dialog" title="components/ui/dialog/dialog.types.ts" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>

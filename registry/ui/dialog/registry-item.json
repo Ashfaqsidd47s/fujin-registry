@@ -1,0 +1,23 @@
+{
+  "name": "dialog",
+  "type": "registry:ui",
+  "title": "Dialog",
+  "description": "A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.",
+  "dependencies": ["@radix-ui/react-dialog"],
+  "variants": {
+    "core": {
+      "dependencies": [],
+      "files": [
+        { "path": "packages/ui/dialog/core/dialog.tsx", "target": "components/ui/dialog.tsx", "type": "registry:ui" },
+        { "path": "packages/ui/dialog/shared/dialog.types.ts", "target": "components/ui/dialog/dialog.types.ts", "type": "registry:ui" }
+      ]
+    },
+    "motion": {
+      "dependencies": ["motion"],
+      "files": [
+        { "path": "packages/ui/dialog/motion/dialog.tsx", "target": "components/ui/dialog.tsx", "type": "registry:ui" },
+        { "path": "packages/ui/dialog/shared/dialog.types.ts", "target": "components/ui/dialog/dialog.types.ts", "type": "registry:ui" }
+      ]
+    }
+  }
+}

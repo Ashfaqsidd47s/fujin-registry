@@ -1,0 +1,22 @@
+{
+  "name": "alert",
+  "type": "registry:ui",
+  "title": "Alert",
+  "description": "Displays a callout for user attention.",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/alert.tsx",
+      "content": "import * as React from \"react\"\nimport { cn } from \"@/lib/utils\"\nimport { alertVariants } from \"../shared/alert.variants\"\n\nconst Alert = React.forwardRef<\n  HTMLDivElement,\n  React.HTMLAttributes<HTMLDivElement> & {\n    color?: \"default\" | \"primary\" | \"success\" | \"warning\" | \"danger\" | \"info\"\n  }\n>(({ className, color, ...props }, ref) => (\n  <div\n    ref={ref}\n    role=\"alert\"\n    className={cn(alertVariants({ color }), className)}\n    {...props}\n  />\n))\nAlert.displayName = \"Alert\"\n\nconst AlertTitle = React.forwardRef<\n  HTMLParagraphElement,\n  React.HTMLAttributes<HTMLHeadingElement>\n>(({ className, children, ...props }, ref) => (\n  <h5\n    ref={ref}\n    className={cn(\"font-semibold leading-none tracking-tight mb-1\", className)}\n    {...props}\n  >\n    {children}\n  </h5>\n))\nAlertTitle.displayName = \"AlertTitle\"\n\nconst AlertDescription = React.forwardRef<\n  HTMLParagraphElement,\n  React.HTMLAttributes<HTMLParagraphElement>\n>(({ className, ...props }, ref) => (\n  <div\n    ref={ref}\n    className={cn(\"text-xs opacity-90 [&_p]:leading-relaxed\", className)}\n    {...props}\n  />\n))\nAlertDescription.displayName = \"AlertDescription\"\n\nexport { Alert, AlertTitle, AlertDescription }\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "components/ui/alert/alert.variants.ts",
+      "content": "import { cva } from \"class-variance-authority\"\n\nexport const alertVariants = cva(\n  \"relative w-full rounded-2xl border p-4 flex gap-3 text-sm [&>svg]:size-5 [&>svg]:shrink-0\",\n  {\n    variants: {\n      color: {\n        default: \"bg-neutral-100 dark:bg-neutral-800 border-neutral-200 dark:border-neutral-700 text-neutral-800 dark:text-neutral-200\",\n        primary: \"bg-primary-50 dark:bg-primary-950/30 border-primary-200 dark:border-primary-900/50 text-primary-700 dark:text-primary-300\",\n        success: \"bg-success-50 dark:bg-success-950/30 border-success-200 dark:border-success-900/50 text-success-700 dark:text-success-300\",\n        warning: \"bg-warning-50 dark:bg-warning-950/30 border-warning-200 dark:border-warning-900/50 text-warning-700 dark:text-warning-300\",\n        danger: \"bg-danger-50 dark:bg-danger-950/30 border-danger-200 dark:border-danger-900/50 text-danger-700 dark:text-danger-300\",\n        info: \"bg-info-50 dark:bg-info-950/30 border-info-200 dark:border-info-900/50 text-info-700 dark:text-info-300\",\n      },\n    },\n    defaultVariants: {\n      color: \"default\",\n    },\n  }\n)\n",
+      "type": "registry:ui"
+    }
+  ]
+}

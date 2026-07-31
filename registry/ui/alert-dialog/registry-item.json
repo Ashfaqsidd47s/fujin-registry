@@ -1,0 +1,21 @@
+{
+  "name": "alert-dialog",
+  "type": "registry:ui",
+  "title": "Alert Dialog",
+  "description": "A modal dialog that interrupts the user with important content and expects a response.",
+  "dependencies": ["@radix-ui/react-alert-dialog"],
+  "variants": {
+    "core": {
+      "dependencies": [],
+      "files": [
+        { "path": "packages/ui/alert-dialog/core/alert-dialog.tsx", "target": "components/ui/alert-dialog.tsx", "type": "registry:ui" }
+      ]
+    },
+    "motion": {
+      "dependencies": ["motion"],
+      "files": [
+        { "path": "packages/ui/alert-dialog/motion/alert-dialog.tsx", "target": "components/ui/alert-dialog.tsx", "type": "registry:ui" }
+      ]
+    }
+  }
+}

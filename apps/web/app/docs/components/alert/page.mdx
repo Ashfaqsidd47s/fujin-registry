@@ -1,0 +1,43 @@
+# Alert
+
+Displays a callout for user attention.
+
+<ComponentPreview name="alert-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash
+    npx shadcn@latest add http://localhost:3000/r/alert.json
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install class-variance-authority clsx tailwind-merge lucide-react
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="alert" title="components/ui/alert.tsx" />
+
+      <Step>Create the helper variants file.</Step>
+      <ComponentSource name="alert" title="components/ui/alert/alert.variants.ts" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>
+
+## Props
+
+The Alert component accepts the following props:
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `color` | `"default"` \| `"primary"` \| `"success"` \| `"warning"` \| `"danger"` \| `"info"` | `"default"` | The semantic coloring color variant of the alert. |

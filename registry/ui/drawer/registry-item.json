@@ -1,0 +1,10 @@
+{
+  "name": "drawer",
+  "type": "registry:ui",
+  "title": "Drawer",
+  "description": "A drawer component for React.",
+  "dependencies": ["vaul"],
+  "files": [
+    { "path": "packages/ui/drawer/core/drawer.tsx", "target": "components/ui/drawer.tsx", "type": "registry:ui" }
+  ]
+}

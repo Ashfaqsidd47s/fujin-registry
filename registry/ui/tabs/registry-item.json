@@ -1,0 +1,25 @@
+{
+  "name": "tabs",
+  "type": "registry:ui",
+  "title": "Tabs",
+  "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  "dependencies": ["class-variance-authority", "@radix-ui/react-tabs"],
+  "variants": {
+    "core": {
+      "dependencies": [],
+      "files": [
+        { "path": "packages/ui/tabs/core/tabs.tsx", "target": "components/ui/tabs.tsx", "type": "registry:ui" },
+        { "path": "packages/ui/tabs/shared/tabs.variants.ts", "target": "components/ui/tabs/tabs.variants.ts", "type": "registry:ui" },
+        { "path": "packages/ui/tabs/shared/tabs.types.ts", "target": "components/ui/tabs/tabs.types.ts", "type": "registry:ui" }
+      ]
+    },
+    "motion": {
+      "dependencies": ["motion"],
+      "files": [
+        { "path": "packages/ui/tabs/motion/tabs.tsx", "target": "components/ui/tabs.tsx", "type": "registry:ui" },
+        { "path": "packages/ui/tabs/shared/tabs.variants.ts", "target": "components/ui/tabs/tabs.variants.ts", "type": "registry:ui" },
+        { "path": "packages/ui/tabs/shared/tabs.types.ts", "target": "components/ui/tabs/tabs.types.ts", "type": "registry:ui" }
+      ]
+    }
+  }
+}

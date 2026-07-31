@@ -1,0 +1,10 @@
+{
+  "name": "hover-card",
+  "type": "registry:ui",
+  "title": "Hover Card",
+  "description": "For card users to preview content available behind a link.",
+  "dependencies": ["@radix-ui/react-hover-card"],
+  "files": [
+    { "path": "packages/ui/hover-card/core/hover-card.tsx", "target": "components/ui/hover-card.tsx", "type": "registry:ui" }
+  ]
+}

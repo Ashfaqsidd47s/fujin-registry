@@ -1,0 +1,32 @@
+# Tooltip
+
+A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+
+<ComponentPreview name="tooltip-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash
+    npx shadcn@latest add http://localhost:3000/r/tooltip.json
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install @radix-ui/react-tooltip clsx tailwind-merge
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="tooltip" title="components/ui/tooltip.tsx" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>

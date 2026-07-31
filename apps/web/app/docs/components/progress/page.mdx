@@ -1,0 +1,43 @@
+# Progress
+
+Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.
+
+<ComponentPreview name="progress-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <div className="space-y-4">
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Core (CSS Transitions)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/progress.json
+        ```
+      </div>
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Motion (Framer Motion)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/progress-motion.json
+        ```
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install @radix-ui/react-progress clsx tailwind-merge
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="progress" title="components/ui/progress.tsx" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>

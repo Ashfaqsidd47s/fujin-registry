@@ -1,0 +1,11 @@
+{
+  "name": "toast",
+  "type": "registry:ui",
+  "title": "Toast",
+  "description": "A succinct message that is displayed temporarily.",
+  "dependencies": ["@radix-ui/react-toast"],
+  "files": [
+    { "path": "packages/ui/toast/core/toast.tsx", "target": "components/ui/toast.tsx", "type": "registry:ui" },
+    { "path": "packages/ui/toast/shared/use-toast.ts", "target": "hooks/use-toast.ts", "type": "registry:ui" }
+  ]
+}

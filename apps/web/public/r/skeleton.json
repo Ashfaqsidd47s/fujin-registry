@@ -1,0 +1,15 @@
+{
+  "name": "skeleton",
+  "type": "registry:ui",
+  "title": "Skeleton",
+  "description": "Use to show a placeholder while content is loading.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/skeleton.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\nfunction Skeleton({\n  className,\n  ...props\n}: React.HTMLAttributes<HTMLDivElement>) {\n  return (\n    <div\n      className={cn(\"animate-pulse rounded-md bg-neutral-200 dark:bg-neutral-800\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { Skeleton }\n",
+      "type": "registry:ui"
+    }
+  ]
+}

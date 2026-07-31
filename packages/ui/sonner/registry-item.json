@@ -1,0 +1,10 @@
+{
+  "name": "sonner",
+  "type": "registry:ui",
+  "title": "Sonner",
+  "description": "An opinionated toast component for React.",
+  "dependencies": ["sonner"],
+  "files": [
+    { "path": "packages/ui/sonner/core/sonner.tsx", "target": "components/ui/sonner.tsx", "type": "registry:ui" }
+  ]
+}

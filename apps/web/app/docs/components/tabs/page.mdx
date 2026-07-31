@@ -1,0 +1,58 @@
+# Tabs
+
+A set of layered sections of content—known as tab panels—that are displayed one at a time.
+
+<ComponentPreview name="tabs-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <div className="space-y-4">
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Core (CSS Transitions)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/tabs.json
+        ```
+      </div>
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Motion (Framer Motion)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/tabs-motion.json
+        ```
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install @radix-ui/react-tabs class-variance-authority clsx tailwind-merge
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="tabs" title="components/ui/tabs.tsx" />
+
+      <Step>Create the helper variants and types files.</Step>
+      <ComponentSource name="tabs" title="components/ui/tabs/tabs.variants.ts" />
+      <ComponentSource name="tabs" title="components/ui/tabs/tabs.types.ts" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>
+
+## Props
+
+The Tabs component extends the standard Radix UI Tabs layout components:
+
+| Component | Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| `Tabs` | `defaultValue` | `string` | - | The tab value to activate by default. |
+| `Tabs` | `value` | `string` | - | Controlled active tab value. |
+| `TabsTrigger` | `value` | `string` | - | Unique trigger value identifier. |
+| `TabsContent` | `value` | `string` | - | The value that matches the parent trigger key. |

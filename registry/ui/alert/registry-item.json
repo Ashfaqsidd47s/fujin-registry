@@ -1,0 +1,11 @@
+{
+  "name": "alert",
+  "type": "registry:ui",
+  "title": "Alert",
+  "description": "Displays a callout for user attention.",
+  "dependencies": ["class-variance-authority"],
+  "files": [
+    { "path": "packages/ui/alert/core/alert.tsx", "target": "components/ui/alert.tsx", "type": "registry:ui" },
+    { "path": "packages/ui/alert/shared/alert.variants.ts", "target": "components/ui/alert/alert.variants.ts", "type": "registry:ui" }
+  ]
+}

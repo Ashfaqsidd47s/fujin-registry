@@ -1,0 +1,18 @@
+{
+  "name": "progress-motion",
+  "type": "registry:ui",
+  "title": "Progress (Motion)",
+  "description": "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  "dependencies": [
+    "@radix-ui/react-progress",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/progress.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as ProgressPrimitive from \"@radix-ui/react-progress\"\nimport { motion } from \"motion/react\"\nimport { cn } from \"@/lib/utils\"\n\nconst Progress = React.forwardRef<\n  React.ElementRef<typeof ProgressPrimitive.Root>,\n  React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & {\n    indicatorClassName?: string\n    children?: React.ReactNode\n  }\n>(({ className, value, indicatorClassName, ...props }, ref) => (\n  <ProgressPrimitive.Root\n    ref={ref}\n    className={cn(\n      \"relative h-2.5 w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800 border border-border/10\",\n      className\n    )}\n    {...props}\n  >\n    <ProgressPrimitive.Indicator asChild>\n      <motion.div\n        className={cn(\n          \"h-full w-full flex-1 bg-primary\",\n          indicatorClassName\n        )}\n        initial={{ scaleX: 0, originX: 0 }}\n        animate={{ scaleX: (value || 0) / 100 }}\n        transition={{ type: \"spring\", stiffness: 80, damping: 15 }}\n      />\n    </ProgressPrimitive.Indicator>\n  </ProgressPrimitive.Root>\n))\nProgress.displayName = ProgressPrimitive.Root.displayName\n\nexport { Progress }\n",
+      "type": "registry:ui"
+    }
+  ]
+}

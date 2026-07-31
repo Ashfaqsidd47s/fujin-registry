@@ -1,0 +1,35 @@
+# Toast
+
+A succinct message that is displayed temporarily.
+
+<ComponentPreview name="toast-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash
+    npx shadcn@latest add http://localhost:3000/r/toast.json
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install @radix-ui/react-toast clsx tailwind-merge lucide-react
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="toast" title="components/ui/toast.tsx" />
+
+      <Step>Create the helper hook file.</Step>
+      <ComponentSource name="toast" title="hooks/use-toast.ts" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>

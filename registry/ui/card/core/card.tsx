@@ -113,7 +113,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
           ...fujinSurfaceStyle(vars),
           ...radiusVars,
           ...style,
-        }}
+        } as React.CSSProperties}
         {...props}
       />
     )

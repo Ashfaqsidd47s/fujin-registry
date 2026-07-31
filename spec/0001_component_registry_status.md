@@ -20,19 +20,19 @@ As of July 31, 2026, we have established the monorepo foundation, compiler build
 
 ## Component Checklist & Roadmap
 
-Out of the 57 official components available in shadcn/ui (v4 registry), we have built **8** components. The remaining **49** components are listed below under their respective categories.
+Out of the 57 official components available in shadcn/ui (v4 registry), we have built **26** components. The remaining **31** components are listed below under their respective categories.
 
 ### Layout & Navigation
-- [ ] Accordion
-- [ ] Aspect Ratio
-- [ ] Breadcrumb
+- [x] Accordion *(Core & Motion variants)*
+- [x] Aspect Ratio
+- [x] Breadcrumb
 - [ ] Navigation Menu
 - [ ] Pagination
 - [ ] Resizable
 - [ ] Scroll Area
-- [ ] Separator
+- [x] Separator
 - [ ] Sidebar
-- [ ] Tabs
+- [x] Tabs *(Core & Motion variants)*
 
 ### Buttons & Actions
 - [x] Button *(Core & Motion variants)*
@@ -61,21 +61,21 @@ Out of the 57 official components available in shadcn/ui (v4 registry), we have 
 - [ ] Kbd
 
 ### Overlays
-- [ ] Alert Dialog
-- [ ] Dialog
-- [ ] Drawer
-- [ ] Hover Card
-- [ ] Popover
-- [ ] Sheet
-- [ ] Tooltip
+- [x] Alert Dialog *(Core & Motion variants)*
+- [x] Dialog *(Core & Motion variants)*
+- [x] Drawer
+- [x] Hover Card
+- [x] Popover
+- [x] Sheet *(Core & Motion variants)*
+- [x] Tooltip
 
 ### Feedback
-- [ ] Alert
-- [ ] Progress
-- [ ] Skeleton
-- [ ] Sonner
-- [ ] Spinner
-- [ ] Toast
+- [x] Alert
+- [x] Progress *(Core & Motion variants)*
+- [x] Skeleton
+- [x] Sonner
+- [x] Spinner
+- [x] Toast
 
 ### Display
 - [ ] Avatar

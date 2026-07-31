@@ -1,0 +1,29 @@
+{
+  "name": "tabs-motion",
+  "type": "registry:ui",
+  "title": "Tabs (Motion)",
+  "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+  "dependencies": [
+    "class-variance-authority",
+    "@radix-ui/react-tabs",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/tabs.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as TabsPrimitive from \"@radix-ui/react-tabs\"\nimport { motion } from \"motion/react\"\nimport { cn } from \"@/lib/utils\"\nimport { tabsListVariants, tabsTriggerVariants, tabsContentVariants } from \"../shared/tabs.variants\"\nimport {\n  type TabsProps,\n  type TabsListProps,\n  type TabsTriggerProps,\n  type TabsContentProps,\n} from \"../shared/tabs.types\"\n\ninterface TabsLayoutContextType {\n  activeTab: string\n  setActiveTab: (val: string) => void\n  layoutId: string\n}\n\nconst TabsLayoutContext = React.createContext<TabsLayoutContextType | null>(null)\n\nconst Tabs = React.forwardRef<\n  React.ElementRef<typeof TabsPrimitive.Root>,\n  TabsProps\n>(({ defaultValue, value, onValueChange, ...props }, ref) => {\n  const [activeTab, setActiveTab] = React.useState(value || defaultValue || \"\")\n  const layoutId = React.useId()\n\n  React.useEffect(() => {\n    if (value !== undefined) {\n      setActiveTab(value)\n    }\n  }, [value])\n\n  const handleValueChange = React.useCallback(\n    (val: string) => {\n      setActiveTab(val)\n      onValueChange?.(val)\n    },\n    [onValueChange]\n  )\n\n  const currentVal = value !== undefined ? value : activeTab\n\n  return (\n    <TabsLayoutContext.Provider value={{ activeTab: currentVal, setActiveTab: handleValueChange, layoutId }}>\n      <TabsPrimitive.Root\n        ref={ref}\n        value={currentVal}\n        onValueChange={handleValueChange}\n        {...props}\n      />\n    </TabsLayoutContext.Provider>\n  )\n})\nTabs.displayName = \"Tabs\"\n\nconst TabsList = React.forwardRef<\n  React.ElementRef<typeof TabsPrimitive.List>,\n  TabsListProps\n>(({ className, ...props }, ref) => (\n  <TabsPrimitive.List\n    ref={ref}\n    className={cn(tabsListVariants(), className)}\n    {...props}\n  />\n))\nTabsList.displayName = \"TabsList\"\n\nconst TabsTrigger = React.forwardRef<\n  React.ElementRef<typeof TabsPrimitive.Trigger>,\n  TabsTriggerProps & { value: string }\n>(({ className, value, children, ...props }, ref) => {\n  const context = React.useContext(TabsLayoutContext)\n  const isActive = context?.activeTab === value\n\n  return (\n    <TabsPrimitive.Trigger\n      ref={ref}\n      value={value}\n      className={cn(\n        tabsTriggerVariants(),\n        \"relative z-10 data-[state=active]:bg-transparent! data-[state=active]:shadow-none! cursor-pointer\",\n        className\n      )}\n      {...props}\n    >\n      <span className=\"relative z-10\">{children}</span>\n      {isActive && context && (\n        <motion.span\n          layoutId={context.layoutId}\n          className=\"absolute inset-0 z-0 rounded-md bg-background shadow-xs border border-border/10\"\n          transition={{ type: \"spring\", stiffness: 380, damping: 28 }}\n        />\n      )}\n    </TabsPrimitive.Trigger>\n  )\n})\nTabsTrigger.displayName = \"TabsTrigger\"\n\nconst TabsContent = React.forwardRef<\n  React.ElementRef<typeof TabsPrimitive.Content>,\n  TabsContentProps\n>(({ className, ...props }, ref) => (\n  <TabsPrimitive.Content\n    ref={ref}\n    className={cn(tabsContentVariants(), className)}\n    {...props}\n  />\n))\nTabsContent.displayName = \"TabsContent\"\n\nexport { Tabs, TabsList, TabsTrigger, TabsContent }\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "components/ui/tabs/tabs.variants.ts",
+      "content": "import { cva } from \"class-variance-authority\"\n\nexport const tabsListVariants = cva(\n  \"inline-flex h-10 items-center justify-center rounded-xl bg-muted p-1 text-muted-foreground border border-border/40\"\n)\n\nexport const tabsTriggerVariants = cva(\n  \"inline-flex items-center justify-center whitespace-nowrap rounded-lg px-3.5 py-1.5 text-xs font-semibold ring-offset-background transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm cursor-pointer select-none\"\n)\n\nexport const tabsContentVariants = cva(\n  \"mt-2 ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\"\n)\n",
+      "type": "registry:ui"
+    },
+    {
+      "path": "components/ui/tabs/tabs.types.ts",
+      "content": "import * as React from \"react\"\nimport * as TabsPrimitive from \"@radix-ui/react-tabs\"\n\nexport interface TabsProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Root> {\n  children?: React.ReactNode\n}\n\nexport interface TabsListProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.List> {\n  children?: React.ReactNode\n}\n\nexport interface TabsTriggerProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger> {\n  children?: React.ReactNode\n}\n\nexport interface TabsContentProps extends React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content> {\n  children?: React.ReactNode\n}\n",
+      "type": "registry:ui"
+    }
+  ]
+}

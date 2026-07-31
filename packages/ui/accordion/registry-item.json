@@ -1,0 +1,25 @@
+{
+  "name": "accordion",
+  "type": "registry:ui",
+  "title": "Accordion",
+  "description": "A vertically stacked set of interactive headings that each disclose an associated section of content.",
+  "dependencies": ["class-variance-authority", "@radix-ui/react-accordion"],
+  "variants": {
+    "core": {
+      "dependencies": [],
+      "files": [
+        { "path": "packages/ui/accordion/core/accordion.tsx", "target": "components/ui/accordion.tsx", "type": "registry:ui" },
+        { "path": "packages/ui/accordion/shared/accordion.variants.ts", "target": "components/ui/accordion/accordion.variants.ts", "type": "registry:ui" },
+        { "path": "packages/ui/accordion/shared/accordion.types.ts", "target": "components/ui/accordion/accordion.types.ts", "type": "registry:ui" }
+      ]
+    },
+    "motion": {
+      "dependencies": ["motion"],
+      "files": [
+        { "path": "packages/ui/accordion/motion/accordion.tsx", "target": "components/ui/accordion.tsx", "type": "registry:ui" },
+        { "path": "packages/ui/accordion/shared/accordion.variants.ts", "target": "components/ui/accordion/accordion.variants.ts", "type": "registry:ui" },
+        { "path": "packages/ui/accordion/shared/accordion.types.ts", "target": "components/ui/accordion/accordion.types.ts", "type": "registry:ui" }
+      ]
+    }
+  }
+}

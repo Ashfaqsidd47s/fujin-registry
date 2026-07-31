@@ -1,0 +1,40 @@
+# Aspect Ratio
+
+Displays content within a desired ratio.
+
+<ComponentPreview name="aspect-ratio-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    ```bash
+    npx shadcn@latest add http://localhost:3000/r/aspect-ratio.json
+    ```
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install @radix-ui/react-aspect-ratio
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="aspect-ratio" title="components/ui/aspect-ratio.tsx" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>
+
+## Props
+
+The AspectRatio component accepts the following props:
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `ratio` | `number` | `1` (1:1) | The desired aspect ratio (e.g. `16 / 9` or `4 / 3`). |

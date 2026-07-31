@@ -1,0 +1,14 @@
+{
+  "name": "breadcrumb",
+  "type": "registry:ui",
+  "title": "Breadcrumb",
+  "description": "Displays the path to the current resource using a hierarchy of links.",
+  "dependencies": ["@radix-ui/react-slot"],
+  "files": [
+    {
+      "path": "packages/ui/breadcrumb/core/breadcrumb.tsx",
+      "target": "components/ui/breadcrumb.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}

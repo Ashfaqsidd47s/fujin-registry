@@ -1,0 +1,17 @@
+{
+  "name": "progress",
+  "type": "registry:ui",
+  "title": "Progress",
+  "description": "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  "dependencies": [
+    "@radix-ui/react-progress"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/progress.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport * as ProgressPrimitive from \"@radix-ui/react-progress\"\nimport { cn } from \"@/lib/utils\"\n\nconst Progress = React.forwardRef<\n  React.ElementRef<typeof ProgressPrimitive.Root>,\n  React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> & {\n    indicatorClassName?: string\n    children?: React.ReactNode\n  }\n>(({ className, value, indicatorClassName, ...props }, ref) => (\n  <ProgressPrimitive.Root\n    ref={ref}\n    className={cn(\n      \"relative h-2.5 w-full overflow-hidden rounded-full bg-neutral-100 dark:bg-neutral-800 border border-border/10\",\n      className\n    )}\n    {...props}\n  >\n    <ProgressPrimitive.Indicator\n      className={cn(\n        \"h-full w-full flex-1 bg-primary transition-all duration-300 ease-out\",\n        indicatorClassName\n      )}\n      style={{ transform: `translateX(-${100 - (value || 0)}%)` }}\n    />\n  </ProgressPrimitive.Root>\n))\nProgress.displayName = ProgressPrimitive.Root.displayName\n\nexport { Progress }\n",
+      "type": "registry:ui"
+    }
+  ]
+}

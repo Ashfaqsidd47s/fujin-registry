@@ -9,9 +9,26 @@ import { SwitchDemo } from "./demos/switch-demo"
 import { CardDemo } from "./demos/card-demo"
 import { InputDemo } from "./demos/input-demo"
 import { TextareaDemo } from "./demos/textarea-demo"
-import { BadgeDemo } from "./demos/badge-demo"
-import { CheckboxDemo } from "./demos/checkbox-demo"
 import { LabelDemo } from "./demos/label-demo"
+import { AccordionDemo } from "./demos/accordion-demo"
+import { AspectRatioDemo } from "./demos/aspect-ratio-demo"
+import { BreadcrumbDemo } from "./demos/breadcrumb-demo"
+import { SeparatorDemo } from "./demos/separator-demo"
+import { TabsDemo } from "./demos/tabs-demo"
+import { AlertDemo } from "./demos/alert-demo"
+import { AlertDialogDemo } from "./demos/alert-dialog-demo"
+import { DialogDemo } from "./demos/dialog-demo"
+import { DrawerDemo } from "./demos/drawer-demo"
+import { HoverCardDemo } from "./demos/hover-card-demo"
+import { PopoverDemo } from "./demos/popover-demo"
+import { ProgressDemo } from "./demos/progress-demo"
+import { SheetDemo } from "./demos/sheet-demo"
+import { SkeletonDemo } from "./demos/skeleton-demo"
+import { SonnerDemo } from "./demos/sonner-demo"
+import { SpinnerDemo } from "./demos/spinner-demo"
+import { ToastDemo } from "./demos/toast-demo"
+import { TooltipDemo } from "./demos/tooltip-demo"
+
 
 const demos: Record<string, React.ComponentType> = {
   "button-demo": ButtonDemo,
@@ -19,10 +36,28 @@ const demos: Record<string, React.ComponentType> = {
   "card-demo": CardDemo,
   "input-demo": InputDemo,
   "textarea-demo": TextareaDemo,
-  "badge-demo": BadgeDemo,
-  "checkbox-demo": CheckboxDemo,
   "label-demo": LabelDemo,
+  "accordion-demo": AccordionDemo,
+  "aspect-ratio-demo": AspectRatioDemo,
+  "breadcrumb-demo": BreadcrumbDemo,
+  "separator-demo": SeparatorDemo,
+  "tabs-demo": TabsDemo,
+  "alert-demo": AlertDemo,
+  "alert-dialog-demo": AlertDialogDemo,
+  "dialog-demo": DialogDemo,
+  "drawer-demo": DrawerDemo,
+  "hover-card-demo": HoverCardDemo,
+  "popover-demo": PopoverDemo,
+  "progress-demo": ProgressDemo,
+  "sheet-demo": SheetDemo,
+  "skeleton-demo": SkeletonDemo,
+  "sonner-demo": SonnerDemo,
+  "spinner-demo": SpinnerDemo,
+  "toast-demo": ToastDemo,
+  "tooltip-demo": TooltipDemo,
 }
+
+
 
 interface ComponentPreviewProps {
   name: string

@@ -1,0 +1,57 @@
+# Accordion
+
+A vertically stacked set of interactive headings that each disclose an associated section of content.
+
+<ComponentPreview name="accordion-demo" />
+
+## Installation
+
+<CodeTabs>
+  <TabsList>
+    <TabsTrigger value="cli">Command</TabsTrigger>
+    <TabsTrigger value="manual">Manual</TabsTrigger>
+  </TabsList>
+  <TabsContent value="cli">
+    <div className="space-y-4">
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Core (CSS Transitions)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/accordion.json
+        ```
+      </div>
+      <div>
+        <p className="text-xs text-muted-foreground mb-1.5 font-semibold">Motion (Framer Motion)</p>
+        ```bash
+        npx shadcn@latest add http://localhost:3000/r/accordion-motion.json
+        ```
+      </div>
+    </div>
+  </TabsContent>
+  <TabsContent value="manual">
+    <Steps>
+      <Step>Install the following dependencies:</Step>
+      ```bash
+      npm install @radix-ui/react-accordion class-variance-authority clsx tailwind-merge lucide-react
+      ```
+
+      <Step>Copy and paste the following code into your project.</Step>
+      <ComponentSource name="accordion" title="components/ui/accordion.tsx" />
+
+      <Step>Create the helper variants and types files.</Step>
+      <ComponentSource name="accordion" title="components/ui/accordion/accordion.variants.ts" />
+      <ComponentSource name="accordion" title="components/ui/accordion/accordion.types.ts" />
+
+      <Step>Update the import paths to match your project setup.</Step>
+    </Steps>
+  </TabsContent>
+</CodeTabs>
+
+## Props
+
+The Accordion component accepts the following props:
+
+| Component | Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| `Accordion` | `type` | `single` \| `multiple` | - | Determine whether single or multiple items can expand. |
+| `Accordion` | `collapsible` | `boolean` | `false` | When `type` is `single`, allows closing the active item. |
+| `AccordionItem` | `value` | `string` | - | Unique key for identifying the accordion panel. |

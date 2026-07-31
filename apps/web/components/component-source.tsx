@@ -15,21 +15,20 @@ export function ComponentSource({ name, title }: ComponentSourceProps) {
   let relativePath = ""
 
   if (title) {
-    // If a title specifies a direct path relative to components, we map it
-    if (title.includes("button.variants.ts")) {
-      relativePath = "packages/ui/button/shared/button.variants.ts"
-    } else if (title.includes("button.types.ts")) {
-      relativePath = "packages/ui/button/shared/button.types.ts"
-    } else if (title.includes("switch.variants.ts")) {
-      relativePath = "packages/ui/switch/shared/switch.variants.ts"
-    } else if (title.includes("switch.types.ts")) {
-      relativePath = "packages/ui/switch/shared/switch.types.ts"
+    if (title.includes("variants.ts")) {
+      const parts = title.split("/")
+      const compName = parts[parts.length - 2] || name
+      relativePath = `packages/ui/${compName}/shared/${compName}.variants.ts`
+    } else if (title.includes("types.ts")) {
+      const parts = title.split("/")
+      const compName = parts[parts.length - 2] || name
+      relativePath = `packages/ui/${compName}/shared/${compName}.types.ts`
     } else if (title.startsWith("components/ui/")) {
       const filename = path.basename(title)
-      const compName = filename.replace(".tsx", "")
+      const parts = title.split("/")
+      const compName = parts[parts.length - 2] === "ui" ? filename.replace(".tsx", "").replace(".ts", "") : parts[parts.length - 2]
       relativePath = `packages/ui/${compName}/core/${filename}`
     } else {
-      // Fallback
       relativePath = `packages/ui/${name}/core/${name}.tsx`
     }
   } else {

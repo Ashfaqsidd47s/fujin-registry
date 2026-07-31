@@ -1,0 +1,15 @@
+{
+  "name": "spinner",
+  "type": "registry:ui",
+  "title": "Spinner",
+  "description": "Displays a loading indicator.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "components/ui/spinner.tsx",
+      "content": "import * as React from \"react\"\nimport { cn } from \"@/lib/utils\"\n\ninterface SpinnerProps extends React.HTMLAttributes<SVGElement> {\n  size?: \"sm\" | \"md\" | \"lg\"\n}\n\nconst Spinner = React.forwardRef<SVGSVGElement, SpinnerProps>(\n  ({ className, size = \"md\", ...props }, ref) => {\n    const sizeClasses = {\n      sm: \"h-4 w-4\",\n      md: \"h-6 w-6\",\n      lg: \"h-8 w-8\",\n    }\n\n    return (\n      <svg\n        ref={ref}\n        className={cn(\"animate-spin text-primary\", sizeClasses[size], className)}\n        xmlns=\"http://www.w3.org/2000/svg\"\n        fill=\"none\"\n        viewBox=\"0 0 24 24\"\n        {...props}\n      >\n        <circle\n          className=\"opacity-25\"\n          cx=\"12\"\n          cy=\"12\"\n          r=\"10\"\n          stroke=\"currentColor\"\n          strokeWidth=\"3\"\n        />\n        <path\n          className=\"opacity-75\"\n          fill=\"currentColor\"\n          d=\"M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z\"\n        />\n      </svg>\n    )\n  }\n)\nSpinner.displayName = \"Spinner\"\n\nexport { Spinner }\n",
+      "type": "registry:ui"
+    }
+  ]
+}
